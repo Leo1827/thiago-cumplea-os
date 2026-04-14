@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thiago</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-[#3061E3] flex flex-col items-center justify-start min-h-screen overflow-x-hidden">
+
+    <!-- BOTÓN CUMPLEAÑOS -->
+    <button id="btnConfeti" class="
+        fixed top-5 
+        z-[999]
+        bg-white/20 backdrop-blur-lg
+        hover:scale-110 transition
+        text-2xl
+        p-3 rounded-full
+        shadow-lg
+    ">
+    🎂
+    </button>
+
+    <!-- CONTENEDOR CONFETI -->
+    <div id="confeti-container"></div>
+
+    <!-- FONDO PNG DECORATIVO -->
+    <div class="fondo-img"></div>
+    <!-- LUZ SUPERIOR -->
+    <div class="luz-superior"></div>
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="relative w-full min-h-screen flex items-center justify-center">
+        <div class="relative flex flex-col items-center justify-center">
+            <!-- ANILLO GIRATORIO (CENTRADO PERFECTO) -->
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div class="
+                    mb-32
+                    w-[320px] h-[320px]
+                    rounded-full
+                    border-[3px]
+                    border-r-white
+                    blur-[1px]
+                    animate-spin-slow
+                    shadow-[0_0_20px_#60a5fa]
+                "></div>
+            </div>
+
+            <!-- RAYOS GIF MULTIDIRECCIÓN -->
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none" style="z-index: 15 !important;">
+                <!-- CONTENEDOR -->
+                <div class="rayos-container">
+                    <img src="img/effect.gif" autoplay loop muted class="rayo r1">
+                    <img src="img/effect.gif" autoplay loop muted class="rayo r2">
+                    <img src="img/effect.gif" autoplay loop muted class="rayo r3">
+                    <img src="img/effect.gif" autoplay loop muted class="rayo r4">
+                    <img src="img/effect.gif" autoplay loop muted class="rayo r5">
+                    <img src="img/effect.gif" autoplay loop muted class="rayo r6">
+                </div>
+            </div>
+            
+            <!-- CÍRCULO -->
+            <div class="
+                relative z-10
+                w-72 h-72 
+                bg-white/10 backdrop-blur-lg 
+                rounded-full 
+                shadow-xl
+            "></div>
+
+            <!-- CIUDAD -->
+            <img 
+                src="img/city.png"
+                class="
+                    absolute
+                    top-[50%] left-1/2 -translate-x-1/2
+                    w-[1200px]
+                    pointer-events-none
+                "
+                style="z-index: 20 !important;"
+            >
+
+            <!-- CARRETERA -->
+            <div class="carretera-container">
+                <img 
+                    src="img/carretera.png"
+                    class="
+                        carretera-img
+                        absolute
+                        top-[75%] left-1/2 -translate-x-1/2
+                        w-[1000px] md:w-[700px] h-[300px] md:h-[300px]
+                        z-5
+                        pointer-events-none
+                    "
+                >
+            </div>
+
+            <!-- IMAGEN -->
+            <img 
+                id="imagenSonic"
+                src="img/sonic.png" 
+                class="
+                    absolute 
+                    -top-10 left-1/2 -translate-x-1/2 
+                    w-72
+                    z-20
+                    drop-shadow-2xl
+                "
+            > 
+            <!-- NOMBRE -->
+            <h1 class="
+            mt-10
+            text-7xl md:text-6xl
+            font-bold
+            text-blue-900
+            text-center
+            tracking-wider
+            animate-glow
+            "
+            style="
+            font-family: 'Luckiest Guy', cursive;
+            display: inline-block;
+            animation: floatTitle 3s ease-in-out infinite, glowPulse 2s ease-in-out infinite;
+            z-index: 99;
+            ">
+            THIAGO
+            </h1>
+
+        </div>
+    </div>
+
+    <!-- SEPARADOR SONIC -->
+    <div class="separador-sonic">
+    
+        <!-- LÍNEAS -->
+        <div class="linea linea-izq"></div>
+        <div class="linea linea-der"></div>
+
+        <!-- TEXTO -->
+        <h2 class="texto-sonic">
+            Te invitamos a celebrar juntos<br>
+            <span>Mis 5 años</span>
+        </h2>
+
+    </div>
+
+    <!-- SECCIÓN EVENTO -->
+    <section class="w-full py-10 px-4 flex flex-col items-center gap-10 relative z-50">
+
+        <!-- CONTENEDOR -->
+        <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12 shadow-xl max-w-xl w-full text-center border border-white/20">
+
+
+            <!-- INFO -->
+            <div class="flex flex-col gap-6 text-white text-lg md:text-xl">
+                
+                <div class="flex justify-center">
+                    <div class="
+                        flex items-center gap-6
+                        bg-white/10 backdrop-blur-lg
+                        px-6 py-4
+                        rounded-2xl
+                        border border-white/20
+                        shadow-lg
+                    ">
+
+                        <!-- DÍA -->
+                        <div class="text-center">
+                            <p class="text-white/70 text-sm tracking-widest uppercase">Domingo</p>
+                            <p class="text-5xl font-bold text-white leading-none">26</p>
+                        </div>
+
+                        <!-- LÍNEA -->
+                        <div class="w-[2px] h-12 bg-white/30"></div>
+
+                        <!-- MES -->
+                        <div class="text-center">
+                            <p class="text-white/70 text-sm tracking-widest uppercase">Abril</p>
+                            <p class="text-xl text-white font-semibold">2026</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-center">
+
+                    <div class="
+                        flex items-center gap-5
+                        bg-white/10 backdrop-blur-lg
+                        px-6 py-4
+                        rounded-2xl
+                        border border-white/20
+                        shadow-lg
+                        shadow-[0_0_20px_#60a5fa]
+                    ">
+
+                        <!-- ICONO -->
+                        <div class="
+                            w-12 h-12
+                            flex items-center justify-center
+                            rounded-full
+                            bg-blue-500/30
+                            text-2xl
+                        ">
+                            ⏰
+                        </div>
+
+                        <!-- TEXTO -->
+                        <div class="text-left">
+                            <p class="text-white/60 text-sm uppercase tracking-widest">Hora</p>
+                            <p class="text-white text-xl font-semibold">3:00 PM</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="flex justify-center">
+
+                    <div class="
+                        flex items-center gap-5
+                        bg-white/10 backdrop-blur-lg
+                        px-6 py-4
+                        rounded-2xl
+                        border border-white/20
+                        shadow-lg
+                        shadow-[0_0_20px_#60a5fa]
+                        max-w-md
+                    ">
+
+                        <!-- ICONO -->
+                        <div class="
+                            w-12 h-12
+                            flex items-center justify-center
+                            rounded-full
+                            bg-blue-500/30
+                            text-2xl
+                        ">
+                            📍
+                        </div>
+
+                        <!-- TEXTO -->
+                        <div class="text-left">
+                            <p class="text-white/60 text-sm uppercase tracking-widest">Lugar</p>
+                            <p class="text-white text-lg font-semibold leading-tight">
+                                Salón Comunal<br>
+                                Los Mandarinos
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MAPA -->
+                <div class="w-full max-w-3xl rounded-2xl overflow-hidden shadow-xl border-4 border-white/20">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.7676625863824!2d-75.2032546!3d4.4542626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38c503fe86b16f%3A0x642fff6996f3fcf5!2sCaseta%20comunal%20Los%20Mandarinos!5e0!3m2!1ses-419!2sco!4v1776193215778!5m2!1ses-419!2sco"
+                        width="100%" 
+                        height="300" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+
+            </div>
+
+            <!-- BOTÓN WHATSAPP -->
+            <a 
+                href="https://wa.me/57TU_NUMERO?text=Hola,%20confirmo%20la%20asistencia%20al%20cumpleaños%20de%20Thiago%20🎉"
+                target="_blank"
+                class="
+                    mt-10 inline-block
+                    bg-green-500 hover:bg-green-600
+                    text-white font-bold
+                    px-8 py-4
+                    rounded-full
+                    shadow-lg
+                    transition-all duration-300
+                    hover:scale-110
+                    md:w-[500px]
+                "
+            >
+                <div class="flex items-center gap-2">
+    
+                    <!-- ICONO -->
+                    <svg xmlns="http://www.w3.org/2000/svg" 
+                        viewBox="0 0 32 32" 
+                        class="w-6 h-6 fill-current">
+                        <path d="M16 .396C7.163.396 0 7.559 0 16c0 2.837.741 5.514 2.032 7.845L0 32l8.355-2.004A15.873 15.873 0 0016 31.604c8.837 0 16-7.163 16-16S24.837.396 16 .396zm0 29.021a13.03 13.03 0 01-6.64-1.82l-.476-.282-4.957 1.188 1.323-4.83-.31-.495A12.94 12.94 0 013.01 16c0-7.168 5.822-12.99 12.99-12.99S28.99 8.832 28.99 16 23.168 28.417 16 28.417zm7.318-9.744c-.4-.2-2.37-1.17-2.737-1.302-.367-.133-.635-.2-.903.2-.267.4-1.035 1.302-1.27 1.57-.234.267-.467.3-.867.1-.4-.2-1.688-.622-3.215-1.984-1.188-1.06-1.99-2.37-2.223-2.77-.234-.4-.025-.616.176-.815.18-.178.4-.467.6-.7.2-.234.267-.4.4-.667.133-.267.067-.5-.033-.7-.1-.2-.903-2.178-1.237-2.984-.326-.785-.658-.678-.903-.69l-.77-.014c-.267 0-.7.1-1.067.5-.367.4-1.4 1.367-1.4 3.333 0 1.967 1.433 3.867 1.633 4.133.2.267 2.82 4.307 6.833 6.033.955.412 1.7.658 2.28.842.958.305 1.83.262 2.52.159.77-.115 2.37-.967 2.704-1.9.333-.933.333-1.733.233-1.9-.1-.167-.367-.267-.767-.467z"/>
+                    </svg>
+
+                    <!-- TEXTO -->
+                    <span>Confirmar asistencia</span>
+
+                </div>
+            </a>
+
+        </div>
+
+        <img 
+            src="https://i.gifer.com/3F3F.gif"
+            class="w-40 mx-auto mt-10"
+        />
+
+    </section>
+
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

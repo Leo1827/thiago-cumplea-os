@@ -1,0 +1,273 @@
+    body { font-family: 'Orbitron', sans-serif; }
+
+    .fondo-img {
+        position: fixed;
+        inset: 0;
+        background-image: url('../img/fondo.png'); /* tu imagen */
+        background-repeat: repeat; /* 🔥 si quieres que se repita */
+        background-size: 300px; /* tamaño de las figuras */
+        opacity: 0.15; /* transparencia */
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    /* CONTENEDOR CONFETI */
+    #confeti-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 999;
+    }
+
+    /* CONFETI */
+    .confeti {
+        position: absolute;
+        width: 8px;
+        height: 14px;
+        opacity: 0.9;
+        animation: caer linear forwards;
+    }
+
+    /* ANIMACIÓN */
+    @keyframes caer {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+    }
+
+    /* LUZ TIPO SOL */
+    .luz-superior {
+        position: fixed;
+        top: -150px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 600px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.4) 30%, transparent 70%);
+        filter: blur(40px);
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    /* DESTELLOS HACIA ABAJO */
+    .luz-superior::after {
+        content: "";
+        position: absolute;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 800px;
+        height: 600px;
+        background: linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.6),
+            rgba(255,255,255,0.2),
+            transparent
+    );
+        filter: blur(30px);
+        opacity: 0.7;
+    }
+
+    /* CARRETERA */
+    .carretera-container {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        pointer-events: none;
+        z-index: 5;
+    }
+
+    /* DESVANECIDO */
+    .carretera-img {
+        -webkit-mask-image: linear-gradient(to top, transparent 0%, black 30%);
+        mask-image: linear-gradient(to top, transparent 0%, black 30%);
+    }
+
+
+
+    @keyframes spinClockwise {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+    }
+
+    .animate-spin-slow {
+        animation: spinClockwise 1.8s linear infinite;
+    }
+
+    @keyframes floatTitle {
+        0%, 100% {
+            transform: translateY(0px) scale(1);
+        }
+        50% {
+            transform: translateY(-12px) scale(1.03);
+        }
+    }
+
+    @keyframes glowPulse {
+    0% {
+        text-shadow:
+        -2px -2px 0 white,
+        2px -2px 0 white,
+        -2px  2px 0 white,
+        2px  2px 0 white,
+        0 0 10px #3b82f6;
+    }
+    50% {
+        text-shadow:
+        -2px -2px 0 white,
+        2px -2px 0 white,
+        -2px  2px 0 white,
+        2px  2px 0 white,
+        0 0 25px #60a5fa;
+    }
+    100% {
+        text-shadow:
+        -2px -2px 0 white,
+        2px -2px 0 white,
+        -2px  2px 0 white,
+        2px  2px 0 white,
+        0 0 10px #3b82f6;
+    }
+    }
+
+    .animate-float {
+        animation: floatTitle 3s ease-in-out infinite;
+        display: inline-block;
+    }
+
+    .animate-glow {
+    animation: glowPulse 2s ease-in-out infinite;
+    }
+
+    /* BASE DEL RAYO */
+    .rayos-container {
+        position: relative;
+        width: 250px;
+        height: 300px;
+        overflow: visible; /* permite efecto */
+    }
+
+    .rayo {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform-origin: bottom center;
+        transform: translate(-50%, -20%) scaleY(-1);
+        opacity: 0.9;
+        filter: drop-shadow(0 0 30px #60a5fa) brightness(1.3);
+    }
+
+    /* DIRECCIONES */
+    .r1 { transform: translate(-50%, -100%) scaleY(-1) rotate(0deg); }
+    .r2 { transform: translate(-50%, -100%) scaleY(-1) rotate(60deg); }
+    .r3 { transform: translate(-50%, -100%) scaleY(-1) rotate(120deg); }
+    .r4 { transform: translate(-50%, -100%) scaleY(-1) rotate(180deg); }
+    .r5 { transform: translate(-50%, -100%) scaleY(-1) rotate(240deg); }
+    .r6 { transform: translate(-50%, -100%) scaleY(-1) rotate(300deg); }
+
+
+
+    /* CONTENEDOR SEPARADOR */
+    .separador-sonic {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    /* TEXTO */
+    .texto-sonic {
+        position: relative;
+        z-index: 10;
+        text-align: center;
+        font-family: 'Luckiest Guy', cursive;
+        font-size: 1.5rem;
+        color: #1e3a8a;
+        padding: 20px 30px;
+
+        /* borde blanco estilo cartoon */
+        text-shadow:
+            -2px -2px 0 white,
+            2px -2px 0 white,
+            -2px  2px 0 white,
+            2px  2px 0 white,
+            0 0 15px #60a5fa;
+
+        animation: flotarTexto 3s ease-in-out infinite;
+    }
+
+    /* TEXTO GRANDE */
+    .texto-sonic span {
+        display: block;
+        font-size: 3.5rem;
+        color: #2563eb;
+        animation: brilloTexto 2s ease-in-out infinite;
+    }
+
+    /* LÍNEAS */
+    .linea {
+        position: absolute;
+        height: 4px;
+        width: 50%;
+        background: linear-gradient(
+            to right,
+            transparent,
+            #60a5fa,
+            white,
+            #60a5fa,
+            transparent
+        );
+        top: 50%;
+        transform: translateY(-50%);
+        filter: blur(1px);
+    }
+
+    /* IZQUIERDA */
+    .linea-izq {
+        left: 0;
+        animation: moverIzq 2s linear infinite;
+    }
+
+    /* DERECHA */
+    .linea-der {
+        right: 0;
+        animation: moverDer 2s linear infinite;
+    }
+
+    /* ANIMACIONES */
+    @keyframes moverIzq {
+        from { transform: translateX(-50%) translateY(-50%); }
+        to { transform: translateX(0%) translateY(-50%); }
+    }
+
+    @keyframes moverDer {
+        from { transform: translateX(50%) translateY(-50%); }
+        to { transform: translateX(0%) translateY(-50%); }
+    }
+
+    @keyframes flotarTexto {
+        0%,100% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+    }
+
+    @keyframes brilloTexto {
+        0%,100% { filter: drop-shadow(0 0 10px #3b82f6); }
+        50% { filter: drop-shadow(0 0 25px #60a5fa); }
+    }
