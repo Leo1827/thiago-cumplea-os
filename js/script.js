@@ -1,3 +1,11 @@
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+
+  setTimeout(() => {
+    loader.classList.add("hide");
+  }, 2500); // dura 2.5 segundos
+});
+
 const imagenes = [
         { src: "img/sonic.png", size: "w-64", top: "-top-10" },
         { src: "img/sonic2.png", size: "w-100", top: "-top-4" },
